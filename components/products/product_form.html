@@ -1,0 +1,34 @@
+<div ng-controller="productFormController" class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-10">
+        <form action="" >
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" ng-model="product.name" class="form-control" id="name" name="name">
+                <input type="hidden" ng-model="product.id" id="id" name="id">
+            </div>
+            <div class="form-group">
+                <label for="price">Price:</label>
+                <input type="text" ng-model="product.price" class="form-control" id="price" name="price">
+              
+            </div>
+            <div class="form-group">
+                <label for="quantity">Quantity:</label>
+                <input type="text" ng-model="product.quantity" class="form-control" id="quantity" name="quantity">
+            </div>
+            <div class="form-group">
+                <label for="description" >Description:</label>
+             
+                <textarea class="form-control" ng-model="product.description" name="description" id="description"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="image">Image:</label> <br>     
+                <img src="{{product.image}}" id="image-view" width="300" height="300" style="object-fit: cover;"/>
+            </div>
+         
+            <button class="btn btn-success mt-2 p-2" style="border-radius:10px" ng-click="addToCart(product)">
+                <i class="fa-solid fa-cart-plus"></i>Add to Cart</button>
+        </form>
+    </div>
+    <div class="col-md-2"></div>
+</div>

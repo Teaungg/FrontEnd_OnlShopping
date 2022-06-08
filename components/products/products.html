@@ -1,0 +1,163 @@
+<div ng-controller="productController" class="row">
+    <h1>Products list</h1>
+    <div class="row">
+
+        <div class="col-2 ">
+            <!--
+            <button class="btn btn-success" href="/index.html#!/products/new">
+                <i class="fa-regular fa-calendar-plus"></i>Add new</button><br>
+                -->
+        </div>
+
+        <div class="col-7">
+            <div class="card mt-2">
+                <div class="card-body">
+                    <form action="">
+                        <input type="text" class="form-control" placeholder=" Tìm Kiếm" ng-model="keyword">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="poly-card mt-2">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-5">
+                                <img src="images/shoppingcart.gif" class="img-fluid">
+                            </div>
+                            <ul class="col-7">
+                                <a class="btn btn-danger" href="/index.html#!/cart" style="border-radius: 10px;">
+                                    View Cart: {{cart.length}}</a><br>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <button ng-click="getProductsByAxios()">CLick</button> -->
+    <table class="table">
+        <thead>
+            <tr>
+                <td>Id</td>
+                <td>Name</td>
+                <td>Price</td>
+                <td>Quantity</td>
+                <td>Description</td>
+                <td>Image</td>
+                <td>Action</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="product in getProductsForPage() | filter:{ name: keyword || undefined }">
+                <td>{{product.id}}</td>
+                <td>{{product.name}}</td>
+                <td>{{product.price}}</td>
+                <td>{{product.quantity}}</td>
+                <td>{{product.description}}</td>
+                <td>
+                    <img src="{{product.image}}" width="150" height="150" />
+                </td>
+                <td>
+                    <a class="btn btn-secondary mt-2 p-2 " style="border-radius:10px" href="/index.html#!/products/{{product.id}}/edit">
+                        <i class="fa-solid fa-record-vinyl"></i>Show</a> 
+                   <!--<button class="btn btn-link" ng-click="deleteProduct(product.id)">Delete</button>--> 
+                    <button class="btn btn-success mt-2 p-2" style="border-radius:10px" ng-click="addToCart(product)">
+                         <i class="fa-solid fa-cart-plus"></i>Add to Cart</button>
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+    <!--   <section class="row">
+            <tr ng-repeat="product in getProductsForPage() | filter:{ name: keyword || undefined }"></tr>
+            <article class="col-4">
+              
+                <div class="card float-left m-3" style="width: 15rem; ">
+                  
+                    <div class="card-header">  
+                       
+                        <td>{{product.id}}</td>
+                        <td>{{product.name}}</td>
+                    </div>
+                    <div class="card-body" style="height: 12rem; ">
+                        <td>
+                            <img src="{{product.image}}" width="200" height="150" />
+                        </td>
+                    </div>
+                    
+                       <div class="card-footer">
+                        <td >
+                            <a class="btn btn-info mt-2" href="/index.html#!/products/{{product.id}}/edit" >Show</a> 
+                            <button class="btn btn-danger mt-2" ng-click="deleteProduct(product.id)">Delete</button> 
+                            <button class="btn btn-success mt-2" ng-click="addToCart(product)">Add to Cart</button>
+                        </td>
+                       </div>
+                    
+                </div>
+            
+            </article>
+            <article class="col-4">
+               
+                <div class="card float-left m-3" style="width: 15rem; ">
+                    <div class="card-header">
+                        <td>{{product.id}}</td>
+                        <td>{{product.name}}</td>
+                    </div>
+                    <div class="card-body" style="height: 12rem; ">
+                        <td>
+                            <img src="{{product.image}}" width="350" height="200" />
+                        </td>
+                    </div>
+                    
+                       <div class="card-footer">
+                        <td >
+                            <a class="btn btn-info mt-2" href="/index.html#!/products/{{product.id}}/edit" >Show</a> 
+                            <button class="btn btn-danger mt-2" ng-click="deleteProduct(product.id)">Delete</button> 
+                            <button class="btn btn-success mt-2" ng-click="addToCart(product)">Add to Cart</button>
+                        </td>
+                       </div>
+                      
+                </div>
+            </article>
+            <article class="col-4">
+                
+                <div class="card float-left m-3" style="width: 15rem; ">
+                    <div class="card-header">
+                        <td>{{product.id}}</td>
+                        <td>{{product.name}}</td>
+                    </div>
+                    <div class="card-body" style="height: 12rem; ">
+                        <td>
+                            <img src="{{product.image}}" width="350" height="200" />
+                        </td>
+                    </div>
+                    
+                       <div class="card-footer">
+                        <td >
+                            <a class="btn btn-info mt-2" href="/index.html#!/products/{{product.id}}/edit" >Show</a> 
+                            <button class="btn btn-danger mt-2" ng-click="deleteProduct(product.id)">Delete</button> 
+                            <button class="btn btn-success mt-2" ng-click="addToCart(product)">Add to Cart</button>
+                        </td>
+                       </div>
+                     
+                </div>
+            </article>
+        </tr> 
+        </section>-->
+
+
+
+    <div class="col text-center">
+        <button class="btn btn-warning" ng-click="previous()"><i class="fa-solid fa-backward"></i></i>Previous</button>
+        <button class="btn btn-warning" ng-click="next()"><i class="fa-solid fa-forward"></i>Next</button>
+    </div>
+
+</div>
+
+
+
+</div>

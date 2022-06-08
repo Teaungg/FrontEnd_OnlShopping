@@ -1,0 +1,48 @@
+
+
+.btn-dark {
+    background-color: black;
+    width: 100%;
+    min-height: 60px;
+    padding: 16.5px 22.5px;
+    border-radius: 35px;
+    border: 1.5px solid transparent;
+    color : white;
+  }
+  button:hover{ 
+    display: block;
+    background-color: grey;
+    color :grey;
+  }
+  
+  .css-12whm6j {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 7px;
+  }
+  .mt2-sm {
+    margin-top: 8px;
+    
+  }
+  .css-12whm6j {
+    margin: 2px;
+    padding: 10px;
+    border: 1px solid #111;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+  }
+  
+  
+  .css-xf3ahq {
+    height: 48px;
+    border-radius: 4px;
+  }
+  .btn-light{ 
+    border: 1px solid #111;
+    margin:2px;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  
+  
